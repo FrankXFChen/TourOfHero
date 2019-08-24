@@ -1,0 +1,25 @@
+<h2>My Heroes</h2>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
+<ul class="heroes">
+  <li [style.height]="hero.showSkill ? 'auto':'1.6rem'" *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span *ngIf="hero.attribute=='agility'" class="badge aHero">{{hero.id}}</span> 
+      <span *ngIf="hero.attribute=='strength'" class="badge sHero">{{hero.id}}</span> 
+      <span *ngIf="hero.attribute=='intelligence'" class="badge iHero">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+    <button class="delete" title="show the skills"
+      (click)="showHide(hero.id)">Skills</button>
+    <app-hero-skills *ngIf="hero.showSkill" [heroSkills]="hero.skill"></app-hero-skills>
+  </li>
+</ul>

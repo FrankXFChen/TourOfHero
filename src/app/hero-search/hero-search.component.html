@@ -1,0 +1,15 @@
+<div id="search-component">
+  <h4>Hero Search</h4>
+
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- AsyncPipe 接受一个 Promise 或 Observable 作为输入，
+并且自动订阅这个输入，最终返回它们给出的值 -->

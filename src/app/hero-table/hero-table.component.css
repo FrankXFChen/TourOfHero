@@ -1,0 +1,28 @@
+.toolbar button {
+  margin: 2px; padding: 0;
+}
+
+.ag-cell {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+label {
+  font-weight: normal !important;
+}
+
+.ag-menu {
+  z-index: 50;
+}
+.myGrid{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+::ng-deep .ag-header {
+  background-color: lightgrey;
+}
+
+::ng-deep .ag-header .ag-cell-label-container {
+  padding:4px;
+}

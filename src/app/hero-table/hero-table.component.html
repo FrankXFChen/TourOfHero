@@ -1,0 +1,24 @@
+<div *ngIf="heroes">
+  <table>
+    <tr *ngFor="let hero of heroes">
+      <td>{{hero.id}}</td>
+      <td>{{hero.name | uppercase}}</td>
+      <td>{{hero.attribute}}</td>
+    </tr>
+  </table>
+
+  <!-- <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button> -->
+</div>
+<p>-------------------------------------------------------------</p>
+<ag-grid-angular #agGrid style="width: 100%; height: 500px;" class="ag-fresh"
+    [gridOptions]="gridOptions"
+    [columnDefs]="columnDefs"
+    [showToolPanel]="showToolPanel"
+    [rowData]="rowData"
+     enableColResize
+     enableSorting
+     enableFilter
+     rowHeight="22"
+     rowSelection="multiple">
+</ag-grid-angular>
