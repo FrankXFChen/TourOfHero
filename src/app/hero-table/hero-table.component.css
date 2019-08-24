@@ -24,5 +24,10 @@ label {
 }
 
 ::ng-deep .ag-header .ag-cell-label-container {
-  padding:4px;
+  padding: 2px;
+}
+
+::ng-deep .ag-body-viewport .ag-cell-value {
+  padding: 2px;
+  color:red !important;
 }
