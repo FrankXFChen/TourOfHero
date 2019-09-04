@@ -1,0 +1,35 @@
+//count the times of the max times character in a string
+function countMaxInSring(str){
+	let obj={};
+	for(let val of str){
+    	if(val!=" "){
+			if(obj[val]){
+				obj[val]+=1;
+			}else{
+				obj[val] = 1;
+			}
+		}
+	}
+	let count = 0;
+	let maxKey = '';
+	for(let key in obj){
+		if(obj[key]>count){
+			count = obj[key];
+			maxKey = key;
+		}
+	}
+	console.log("maxKey is "+maxKey+", maxCount is "+count);
+}
+
+//remove duplicate elements in a array
+function arrayDulicateRemove(array){
+    let obj = {};
+    let arrayDulicateRemoved = [];
+    for(let val of array){
+        if(!obj[val]){
+            obj[val] = 1;
+            arrayDulicateRemoved.push(val);
+        }
+    }
+    console.log(arrayDulicateRemoved);
+}

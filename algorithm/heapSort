@@ -1,0 +1,46 @@
+//js array index from 0 to array.length，
+//算法导论的伪代码数组从1开始
+
+function maxHeapify(A, i, length){
+    let largest;
+    let heapSize = length;
+    let l = 2*(i+1)-1;
+    let r = 2*(i+1);
+    if(l<=heapSize-1 && A[l]>A[i]){
+        largest = l;
+    } else {
+        largest = i;
+    }
+    if(r<=heapSize-1 && A[r]>A[largest]){
+        largest = r;
+    }
+    if(largest != i){
+        let temp = A[largest];
+        A[largest] = A[i];
+        A[i] = temp;
+        //console.log(A, 'largest '+largest);
+        maxHeapify(A, largest, heapSize);
+    }
+} 
+function buildMaxHeap(A){
+    let start = Math.floor(A.length/2)-1;
+    for(let i= start; i>=0; i--){
+        console.log('this '+i);
+        maxHeapify(A, i, A.length);
+    }
+}
+
+function heapSort(A){
+    buildMaxHeap(A);
+    let heapSize = A.length;
+    for(let i = A.length-1; i>0; i--){
+        //console.log('A ', A);
+        let temp = A[i];
+        A[i] = A[0];
+        A[0] = temp;
+        //console.log('A changed', A);
+        heapSize--;
+        //console.log('xxxxx '+i+'  heapsize '+ heapSize);
+        maxHeapify(A, 0, heapSize)
+    }
+}
