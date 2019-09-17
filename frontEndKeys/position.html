@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .wrapper {
+            background: gold;
+            width: 100%;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+        }
+    
+        .inner {
+            width: 300px;
+            height: 400px;
+            vertical-align: middle;
+            display: inline-block;
+            background: greenyellow;
+        }
+    
+        .wrapper2 {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            background: black;
+        }
+    
+        .inner2 {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background: gray;
+        }
+    
+        #div1 {
+            background: gold;
+            width: 100%;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+        }
+    
+        #div2 {
+            width: 300px;
+            height: 400px;
+            vertical-align: middle;
+            display: inline-block;
+            background: greenyellow;
+        }
+    
+        #div3 {
+            width: 300px;
+            height: 400px;
+            vertical-align: middle;
+            display: inline-block;
+            background: rgb(47, 161, 255);
+        }
+    </style>
+    <body>
+        <!-- <div id="dd1">
+            <div id="dd2"></div>
+        </div> -->
+        <p>---------------------------</p>
+        <div id="div1">
+            <div id="div2">11111
+            </div>
+            <div id="div3">222222
+            </div>
+        </div>
+        <p>---------------------------</p>
+        <div class="wrapper">
+            <div class="inner">333333</div>
+        </div>
+        <p>---------------------------</p>
+
+        <div class="wrapper2">
+                <div class="inner2"></div>
+            </div>
+    </body>
+</html>
