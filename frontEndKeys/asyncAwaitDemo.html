@@ -11,6 +11,12 @@
 
 <h1 id="result"></h1>
 <button id="btn">click</button>
+<button id="startId">Start</button>
+<div>
+    <span style="display: inline-block">THIS IS LIST</span>
+    <ul id="ulID">
+    </ul>
+</div>
 </body>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -20,6 +26,19 @@
         });
         $("#result").html('Waiting...')
       });
+
+      $('#startId').on('click', ()=>{
+          var count = 0;
+          var interval = setInterval((cb) => {
+              $("#ulID").append(`<li>` + (new Date()) + `</li>`);
+              count++;
+              cb(count);
+          }, 2000, (val) => {
+              if (val >= 10) { 
+                  clearInterval(interval) 
+                }
+          })
+      })
       
     });
     async function asyncTest(val) {
